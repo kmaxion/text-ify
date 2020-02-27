@@ -10,7 +10,7 @@ class AppNavbar extends Component {
   }
 
   openGithub = () => {
-    window.open("https://github.com/kmaxion", "_blank");
+    window.open("https://github.com/kmaxion/text-ify", "_blank");
   }
 
   onLogout = (e) => {
@@ -28,7 +28,7 @@ class AppNavbar extends Component {
     return (
       <nav className="navbar" role="navigation">
         <div className="navbar-brand">
-          <div className="navbar-item title is-5">
+          <div className="navbar-item title is-4">
             Text-ify
           </div>
           <a role="button" onClick={this.toggleNav} className={`navbar-burger ${this.state.navOpen ? "is-active" : ""}`} aria-label="menu" aria-expanded="false">

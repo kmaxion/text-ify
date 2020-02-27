@@ -7,8 +7,11 @@ import PlaylistTitle from './components/PlaylistTitle.js';
 import PlaylistSelect from './components/PlaylistSelect.js';
 import Instructions from './components/Instructions';
 import Info from './components/Info';
+import { detect } from 'detect-browser';
 
 import './App.sass';
+
+const browser = detect();
 
 class App extends Component {
   state = {
@@ -159,19 +162,20 @@ class App extends Component {
   }
 
   render() {
+    console.log(browser);
       return (
       <div className="App">
         <AppNavbar status={this.state.login_status} code={this.state.code} checkStatus={this.checkStatus}/>
         {this.state.login_status
           ? 
-            <div>
-              <div className="columns container">
+            <div className="container is-fluid">
+              <div className="columns is-4">
                 <div style={{"padding-bottom":"0px"}} className="column container is-half center">
                   <PlaylistTitle togglePlaylistSelect={this.togglePlaylistSelect} playlist_name={this.state.playlist_name} />
                 </div>
                 <div style={{"padding-bottom":"0px"}} className="column"></div>
               </div>
-              <div className="columns container">
+              <div className="columns is-4">
                 <div style={{"padding-top":"0px"}} className="column container is-half center">
                   <Playlist 
                     onPlay={this.onPlay}
