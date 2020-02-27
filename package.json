@@ -1,0 +1,35 @@
+{
+  "name": "text-ify-backend",
+  "version": "1.0.0",
+  "description": "Handles API calls for Text The AUX web application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node -r dotenv/config server.js",
+    "server": "nodemon -r dotenv/config server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "Kevin Maxion",
+  "license": "MIT",
+  "dependencies": {
+    "bulma": "^0.8.0",
+    "clarifai": "^2.9.1",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "mongoose": "^5.8.0",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.1",
+    "query-string": "^6.9.0",
+    "twilio": "^3.38.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.0"
+  },
+  "engines": {
+    "node": "12.x"
+  }
+}

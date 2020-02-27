@@ -1,0 +1,9 @@
+.select:hover {
+  background: orange;
+}
+
+.list-item.selected {
+  background: orange;
+  padding: 40px 15px;
+  max-height: 200px;
+}
