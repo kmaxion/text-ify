@@ -1,16 +1,10 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const Clarifai = require('clarifai');
 const { generateStr, createPlaylist } = require('../modules/helpers');
 const PlaylistCode = require('../models/PlaylistCode');
 
-const { CLARIFAI_API_KEY } = require('../config/keys');
 const { refreshToken } = require('../modules/helpers');
 const router = express.Router();
-const clarifai = new Clarifai.App({
-  apiKey: CLARIFAI_API_KEY
-});
-
 
 // Requests all of user's playlists from Spotify
 router.get('/all', (req, res) => {
@@ -88,18 +82,5 @@ router.get('/play', (req, res) => {
     })
     .catch(err => console.log("PLAY: " + err));
 });
-
-router.get('/color', (req, res) => {
-  const img = req.query.img;
-  console.log("color url:", img);
-  clarifai.models.predict("eeed0b6733a644cea07cf4c60f87ebb7", img)
-    .then(data => {
-      res.send({colors: data.outputs[0].data.colors});
-    })
-    .catch(err => {
-      console.log(err);
-    });
-});
-
 
 module.exports = router;
