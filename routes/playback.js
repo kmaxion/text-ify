@@ -1,7 +1,7 @@
-const express = require('express');
+const { Router } = require('express');
 const fetch = require('node-fetch');
 
-const router = express.Router();
+const router = Router();
 
 router.get('/', (req, res) => {
   const url = "https://api.spotify.com/v1/me/player";

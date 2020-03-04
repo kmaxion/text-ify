@@ -168,15 +168,15 @@ class App extends Component {
         <AppNavbar status={this.state.login_status} code={this.state.code} checkStatus={this.checkStatus}/>
         {this.state.login_status
           ? 
-            <div className="container">
+            <div className="container is-fluid">
               <div className="columns">
+                <p>{browser.name} {browser.os}</p>
                 <div style={{"padding-bottom":"0px"}} className="column container is-half center">
                   <PlaylistTitle togglePlaylistSelect={this.togglePlaylistSelect} playlist_name={this.state.playlist_name} />
                 </div>
                 <div style={{"padding-bottom":"0px"}} className="column"></div>
               </div>
               <div className="columns">
-              <p>{browser.name} {browser.os}</p>
                 <div style={{"padding-top":"0px"}} className="column container is-half center">
                   <Playlist 
                     onPlay={this.onPlay}

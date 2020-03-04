@@ -1,4 +1,4 @@
-const express = require ('express');
+const { Router } = require('express');
 const queryString = require('query-string');
 const fetch = require('node-fetch');
 const path = require('path');
@@ -13,7 +13,7 @@ const SERVER_URL = process.env.NODE_ENV === 'production'
   : "http://localhost:5000";
 const REDIRECT_URI = SERVER_URL + "/auth/callback";
 
-const router = express.Router();
+const router = Router();
 
 // Redirect to Spotify OAuth2 Confirmation
 router.get("/", (req, res) => {
@@ -77,7 +77,6 @@ router.get("/callback", (req, res) => {
   params.append('grant_type', "authorization_code");
   params.append('code', req.query.code);
   params.append('redirect_uri', REDIRECT_URI);
-
   const options = {
     method: 'POST',
     headers: {
@@ -94,6 +93,7 @@ router.get("/callback", (req, res) => {
       sess.refresh_token = data["refresh_token"];
       sess.save();
 
+      // TO-DO; Make sure it's unique
       const code = generateStr(5);
       sess.code = code;
       

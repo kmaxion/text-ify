@@ -1,10 +1,10 @@
-const express = require('express');
+const { Router } = require('express');
 const fetch = require('node-fetch');
 const { generateStr, createPlaylist } = require('../modules/helpers');
 const PlaylistCode = require('../models/PlaylistCode');
 
 const { refreshToken } = require('../modules/helpers');
-const router = express.Router();
+const router = Router();
 
 // Requests all of user's playlists from Spotify
 router.get('/all', (req, res) => {

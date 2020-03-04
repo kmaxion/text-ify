@@ -1,11 +1,11 @@
-const express = require ('express');
+const { Router } = require('express');
 const PlaylistCode = require('../models/PlaylistCode');
 const fetch = require('node-fetch');
 const mongoose = require('mongoose');
 const queryString = require('query-string');
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
-const router = express.Router();
+const router = Router();
 
 
 // HANDLE RECEIVING TWILIO TEXT

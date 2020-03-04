@@ -1,8 +1,8 @@
-const express = require('express');
+const { Router } = require('express');
 const fetch = require('node-fetch');
 
 const { getUserInfo } = require('../modules/helpers');
-const router = express.Router();
+const router = Router();
 
 router.get('/info', (req, res) => {
     getUserInfo(req, data => {
