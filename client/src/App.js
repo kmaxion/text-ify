@@ -47,7 +47,6 @@ class App extends Component {
           }}
           token={token}
           autoPlay={true}
-          persistDeviceSelection={true}
         />
       </div>
     )
@@ -85,11 +84,9 @@ class App extends Component {
   }
 
   getCurrentPlayback = () => {
-    console.log("getCurrentPlayback called");
     fetch("/playback", {credentials: 'include'})
     .then(res => res.json())
     .then(data => {
-      console.log('currentPlayback:', data);
       this.setState({currentDevice: !data.device ? '' : data.device.name});
       this.setState({})
     })
@@ -100,7 +97,6 @@ class App extends Component {
     fetch(`/playlists/assign/${playlist_id}`, {method: 'POST', credentials: 'include'})
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         this.setState({
           code: data.code,
           playlist_id: data.playlist_id,
@@ -119,7 +115,6 @@ class App extends Component {
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data) {
           this.getCurrentPlayback();
         }
@@ -131,7 +126,6 @@ class App extends Component {
     fetch("/playlists/all", {credentials: 'include'})
     .then(res => res.json())
     .then(data => {
-      console.log(data);
       this.setState({playlists: data.items});
     })
     .catch(err => console.log(err)); 
@@ -143,7 +137,6 @@ class App extends Component {
 
   onDeviceSelect = (e) => {
     if (e.target.dataset.value === undefined) {
-      console.log('no device clickd');
       return;
     }
 

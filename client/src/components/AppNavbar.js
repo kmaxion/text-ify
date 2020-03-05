@@ -18,7 +18,6 @@ class AppNavbar extends Component {
     .then(res => res.json())
     .then(data => {
       if (data.logout) {
-        console.log("logout success");
         this.props.checkStatus();
       }})
     .catch(err => console.log(err));

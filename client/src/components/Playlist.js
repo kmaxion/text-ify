@@ -10,13 +10,13 @@ class Playlist extends Component {
     }
 
     this.playDisabled = false;
-    //is.pollID = null;
+    this.pollID = null;
   }
 
   getData = () => {
     if (this.props.playlist_id === '' || this.props.playlist_id === undefined) {
       this.props.setPlaylistName("No playlist selected");
-      this.props.setPlaylistURI('');
+      this.props.setPlaylistURI("");
       return;
     }
 
