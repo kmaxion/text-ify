@@ -47,7 +47,7 @@ class AppNavbar extends Component {
             </div>
             {this.props.status 
               ? <div className="navbar-item">
-                <button className="is-danger is-small button" onClick={this.onLogout}><span>Logout</span></button> 
+                <button className="is-small is-danger button" onClick={this.onLogout}><span>Logout</span></button> 
               </div>
               : <></>
             }

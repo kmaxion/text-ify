@@ -6,12 +6,9 @@ import Playlist from './components/Playlist.js';
 import PlaylistTitle from './components/PlaylistTitle.js';
 import PlaylistSelect from './components/PlaylistSelect.js';
 import Instructions from './components/Instructions';
-import Info from './components/Info';
-import { detect } from 'detect-browser';
+import DeviceSelect from './components/DeviceSelect';
 
 import './App.sass';
-
-const browser = detect();
 
 class App extends Component {
   state = {
@@ -162,7 +159,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(browser);
       return (
       <div className="App">
         <AppNavbar status={this.state.login_status} code={this.state.code} checkStatus={this.checkStatus}/>
@@ -170,7 +166,10 @@ class App extends Component {
           ? 
             <div className="container is-fluid">
               <div className="columns">
-                <p>{browser.name} {browser.os}</p>
+                <div className="column container is-half"><DeviceSelect currentDevice={this.state.currentDevice} onDeviceSelect={this.onDeviceSelect}/></div>
+                <div className="column"></div>
+              </div>
+              <div className="columns">
                 <div style={{"padding-bottom":"0px"}} className="column container is-half center">
                   <PlaylistTitle togglePlaylistSelect={this.togglePlaylistSelect} playlist_name={this.state.playlist_name} />
                 </div>
@@ -189,7 +188,6 @@ class App extends Component {
                 </div>
                 <div style={{"padding-top":"0px", "margin-bottom":"50px"}} className="column container is-offset-1">
                   <Instructions code={this.state.code} />
-                  {/*<Info currentDevice={this.state.currentDevice} onDeviceSelect={this.onDeviceSelect}/>*/}
                 </div>
                 <PlaylistSelect 
                   playlists={this.state.playlists}
