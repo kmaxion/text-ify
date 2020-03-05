@@ -42,10 +42,7 @@ class App extends Component {
       <div style={{"margin-top":"30px"}} className="navbar is-fixed-bottom">
         <SpotifyPlayer 
           callback={(state) => {
-            console.log(state);
-            if (this.state.currentDevice === '') {
-              this.transferPlayback(state.deviceId);
-            }
+            if (this.state.currentDevice === '') this.transferPlayback(state.deviceId);
             this.getCurrentPlayback();
           }}
           token={token}
@@ -170,10 +167,10 @@ class App extends Component {
                 <div className="column"></div>
               </div>
               <div className="columns">
-                <div style={{"padding-bottom":"0px"}} className="column container is-half center">
+                <div style={{"padding-bottom":"5px"}} className="column container is-half center">
                   <PlaylistTitle togglePlaylistSelect={this.togglePlaylistSelect} playlist_name={this.state.playlist_name} />
                 </div>
-                <div style={{"padding-bottom":"0px"}} className="column"></div>
+                <div style={{"padding-bottom":"5px"}} className="column"></div>
               </div>
               <div className="columns">
                 <div style={{"padding-top":"0px"}} className="column container is-half center">
@@ -200,7 +197,7 @@ class App extends Component {
           : <div className="section container center">
               <Login checkStatus={this.checkStatus}/>
             </div>}
-            {this.state.token !== '' && this.state.token !== undefined 
+            {this.state.token !== '' && this.state.token !== undefined
               ? this.loadPlayer(this.state.token)
               : <></>
             }

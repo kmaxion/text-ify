@@ -28,9 +28,12 @@ class AppNavbar extends Component {
     return (
       <nav className="navbar" role="navigation">
         <div className="navbar-brand">
-          <div className="navbar-item title is-4">
-            Text-ify
-          </div>
+          {this.props.status 
+            ? <div className="navbar-item title is-4">
+              Text-ify
+            </div>
+            : <></>
+          }
           <a role="button" onClick={this.toggleNav} className={`navbar-burger ${this.state.navOpen ? "is-active" : ""}`} aria-label="menu" aria-expanded="false">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>

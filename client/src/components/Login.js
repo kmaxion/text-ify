@@ -17,7 +17,22 @@ const Login = ({ checkStatus }) => {
   }
 
   return (
-    <button onClick={onLogin} className="button is-large is-success is-rounded">Login with Spotify</button>
+    <div class="card">
+      <div id="login" class="card-content center">
+        <p className="title">
+          Textify
+        </p>
+        <p>Add to your Spotify playlist using phone texts!</p>
+        <p>* Spotify Premium account required.</p>
+      </div>
+      <footer className="card-footer">
+        <div className="card-footer-item">
+          <button onClick={onLogin} className="button is-success is-rounded">Login with Spotify</button>
+        </div>
+      </footer>
+    </div>
+
+
   );
 }
  

@@ -1,25 +1,7 @@
-::-webkit-scrollbar {
-    width: 0px;
-}
-
-a:active {
-    color: black;
-}
-
-.pointer {
-    cursor: pointer;
-}
-
-.center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 @import 'partials/transitions';
 @import 'partials/list';
 @import 'partials/navbar';
 @import 'partials/modal';
 @import 'partials/card';
 @import 'partials/button';
+@import 'partials/general';

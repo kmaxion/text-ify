@@ -10,7 +10,7 @@ const Instructions = ({ code }) => {
       </header>
       <div className="card-content container">
         <div className="content center">
-          <div style={{"textAlign":"center"}}className="subtext">Send a text message containing your assigned code <strong>{code}</strong> and your song request:</div>
+          <div style={{"textAlign":"center"}}className="subtext">Send a text message to <strong>+1 (205) 395-0143</strong> containing your assigned code <strong>{code}</strong> followed by your song request:</div>
           <div className="chat">
             <div className="recipient">To: +1 (205) 395-0143</div>
             <div className="mine messages">
