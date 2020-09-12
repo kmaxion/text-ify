@@ -19,7 +19,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "mongoose": "^5.8.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.13.1",
     "query-string": "^6.9.0",
     "twilio": "^3.38.0"
